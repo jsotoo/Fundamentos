@@ -1,0 +1,15 @@
+﻿@model WebAppProject.Controllers.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+<h2>Register</h2>
+<hr />
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+    @Html.LabelFor(x => x.UserName) @Html.TextBoxFor(x => x.UserName)
+    <br />
+    @Html.LabelFor(x => x.Password) @Html.PasswordFor(x => x.Password)
+    <br />
+    <input class="btn btn-success" type="submit" value="Register" />
+}
